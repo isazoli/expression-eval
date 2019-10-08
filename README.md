@@ -13,7 +13,7 @@
 ## Known limitations
 * plus operator handling is implemented, but plus/positive sign handling is not (the negative sign is working).
 * Console: only validates on `enter`, not on every keystroke 
-* RAND is not yet implemented
+* RAND is not yet implemented (finally it's implemented, but a little bit after the 8 hours deadline - you can find the solution on the `overtime` feature branch)
 
 ## Notes on testing
 * use ScalaTest property-based testing [http://www.scalatest.org/user_guide/table_driven_property_checks]. Which unfortunately not as sofisticated as JUnit5 property-based testing solution.
