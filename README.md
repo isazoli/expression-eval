@@ -1,14 +1,18 @@
 # expression-eval
 
-## Solution startegy
+## My solution startegy was
 * use Scala Parser Combinators [https://github.com/scala/scala-parser-combinators]
 * "inspiration" and code snippets from [http://labun.com/fh/ma.pdf]
 
-## Build the project
+## How to build the project
 * the project is an Scala sbt project. 
 
-## Run the console
-* simply use `sbt run`
+## How to run the console
+* simply use `sbt run` and exit with `CTRL + C` 
 
-## Testing
+## Known limitations
+* plus operator handling is implemented, but plus/positive sign handling is not (the negative sign is working).
+* Console: only validates on `enter`, not on every keystroke 
+
+## Notes on testing
 * use ScalaTest property-based testing [http://www.scalatest.org/user_guide/table_driven_property_checks]. Which unfortunately not as sofisticated as JUnit5 property-based testing solution.
