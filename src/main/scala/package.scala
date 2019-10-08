@@ -3,13 +3,20 @@ import scala.math.{cos, sin, tan}
 trait ArithAST { // Interface for AST subtypes
 type T
 
-  def Add: (T, T) => T // Abstract
-  def Sub: (T, T) => T // semantic
-  def Mul: (T, T) => T // actions
-  def Div: (T, T) => T // to build
-  def Number: String => T // AST nodes.
+  def Add: (T, T) => T
+
+  def Sub: (T, T) => T
+
+  def Mul: (T, T) => T
+
+  def Div: (T, T) => T
+
+  def Number: String => T
+
   def Sin: T => T
+
   def Cos: T => T
+
   def Tan: T => T
 }
 

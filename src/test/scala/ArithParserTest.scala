@@ -32,9 +32,9 @@ object ArithParserTest {
     "expression" -> "expectedValue",
     List(
       "3 + 2 + 4" -> (3 + 2 + 4).toDouble,
-      // TODO: add sing operations
+      //TODO: add support for plus sing operations
       //"+2" -> 2D,
-      //"-2" -> -2D,
+      "-2" -> -2D,
       "sin(30) + cos(20)" -> (sin(30) + cos(20)),
       "sin(sin(30) + cos(20))" -> sin(sin(30) + cos(20)),
       "3 + sin(sin(30) + cos(20))" -> (3 + sin(sin(30) + cos(20)))
