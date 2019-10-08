@@ -1,3 +1,5 @@
+import scala.math.{cos, sin, tan}
+
 trait ArithAST { // Interface for AST subtypes
 type T
 
@@ -6,6 +8,9 @@ type T
   def Mul: (T, T) => T // actions
   def Div: (T, T) => T // to build
   def Number: String => T // AST nodes.
+  def Sin: T => T
+  def Cos: T => T
+  def Tan: T => T
 }
 
 trait SimpleAST extends ArithAST {
@@ -22,6 +27,12 @@ trait SimpleAST extends ArithAST {
   case class Div(a: T, b: T) extends T
 
   case class Number(e: String) extends T
+
+  case class Sin(a: T) extends T
+
+  case class Cos(a: T) extends T
+
+  case class Tan(a: T) extends T
 
 }
 
@@ -50,6 +61,18 @@ trait SmartAST extends ArithAST {
 
   case class Number(e: String) extends T {
     def eval = e.toDouble
+  }
+
+  case class Sin(a: T) extends T {
+    def eval: Double = sin(a.eval)
+  }
+
+  case class Cos(a: T) extends T {
+    def eval: Double = cos(a.eval)
+  }
+
+  case class Tan(a: T) extends T {
+    def eval: Double = tan(a.eval)
   }
 
 }
