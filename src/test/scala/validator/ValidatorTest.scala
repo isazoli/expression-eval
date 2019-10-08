@@ -1,7 +1,8 @@
+/*
 package validator
 
 import dsl._
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{FlatSpec, Ignore, Matchers}
 import validator.ValidatorTest._
 
 /**
@@ -16,6 +17,7 @@ import validator.ValidatorTest._
   * 3 + + F0
   * 3+ F
   */
+@Ignore
 class ValidatorTest extends FlatSpec with Matchers {
 
   "all valid cases" should "pass" in {
@@ -95,4 +97,4 @@ object ValidatorTest {
     )
   )
 
-}
+}*/
