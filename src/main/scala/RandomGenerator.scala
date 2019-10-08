@@ -6,7 +6,7 @@ object RandomGenerator {
 
   def generate(): Double = {
     val request = sttp.get(RANDOM_GENERATOR_URI)
-    implicit val backend = HttpURLConnectionBackend()
+    implicit val backend: SttpBackend[Id, Nothing] = HttpURLConnectionBackend()
     val response = request.send()
     if (response.isSuccess) response.unsafeBody.toDouble else Double.NaN
   }
