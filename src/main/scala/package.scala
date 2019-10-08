@@ -18,6 +18,9 @@ type T
   def Cos: T => T
 
   def Tan: T => T
+
+  def Rand: String => T
+
 }
 
 trait SimpleAST extends ArithAST {
@@ -40,6 +43,8 @@ trait SimpleAST extends ArithAST {
   case class Cos(a: T) extends T
 
   case class Tan(a: T) extends T
+
+  case class Rand(a: String) extends T
 
 }
 
@@ -80,6 +85,10 @@ trait SmartAST extends ArithAST {
 
   case class Tan(a: T) extends T {
     def eval: Double = tan(a.eval)
+  }
+
+  case class Rand(a: String) extends T {
+    def eval: Double = RandomGenerator.generate()
   }
 
 }

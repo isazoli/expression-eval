@@ -24,6 +24,20 @@ class ArithParserTest extends PropSpec with Matchers {
     }
   }
 
+  property("expressions with RAND should work properly") {
+    val combinator = new ArithParser with SmartAST {}
+    val result = combinator.parseAll(
+      combinator.expr,
+      "sin(30) + RAND + cos(20)"
+    )
+    result.successful shouldBe true
+    // as we know that the RAND generator generates integer between 1 and 100
+    // we can do a tricky assertion
+    val pivot = sin(30) + cos(20)
+    result.get.eval shouldBe <=(pivot + 100)
+    result.get.eval shouldBe >=(pivot + 1)
+  }
+
 }
 
 object ArithParserTest {

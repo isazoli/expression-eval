@@ -8,7 +8,7 @@ trait ArithParser extends JavaTokenParsers {
     "+" ^^^ Add | "-" ^^^ Sub
   )
 
-  def term = chainl1(
+  def term: Parser[T] = chainl1(
     factor,
     "*" ^^^ Mul | "/" ^^^ Div
   )
@@ -17,5 +17,7 @@ trait ArithParser extends JavaTokenParsers {
     floatingPointNumber ^^ Number |
       "sin(" ~> expr <~ ")" ^^ Sin |
       "cos(" ~> expr <~ ")" ^^ Cos |
-      "tan(" ~> expr <~ ")" ^^ Tan
+      "tan(" ~> expr <~ ")" ^^ Tan |
+      "RAND" ^^ Rand
+
 }
