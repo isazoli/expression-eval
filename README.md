@@ -5,7 +5,9 @@
 * "inspiration" and code snippets from [http://labun.com/fh/ma.pdf]
 
 ## How to build the project
-* the project is an Scala sbt project. 
+* the project is an Scala sbt project.
+
+I used `sbt 1.3.0` for my project. If you have different sbt version: no worries, during the build the 1.3.0 version will be pulled down & used.  
 
 ## How to run the console
 * simply use `sbt run` and exit with `CTRL + C` 
