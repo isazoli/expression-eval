@@ -18,5 +18,8 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-    - name: Run tests
-      run: sbt test
+    - name: SBT Action
+    # You may pin to the exact commit or the version.
+    # uses: lokkju/github-action-sbt@1773266342dbc0df0c3aa36e6dc3ef80c72b5121
+      uses: lokkju/github-action-sbt@v0.2.2
+      
